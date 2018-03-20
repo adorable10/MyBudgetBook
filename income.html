@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Budget</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+                <style>
+			.btn-budgetbutton{
+			color: blue;
+			background: white;
+			cursor: pointer;
+            }
+            
+            body{
+               
+                margin-top: 25px;
+            }
+            
+		.btn-budgetbutton:hover{
+			box-shadow: 1px 1px 10px blue;
+			border: 1px solid white;
+		
+		}
+		.content{
+			margin-top: 20px;
+		}
+		.menu{
+	
+			color: white;
+			background: rgb(0,123,255);
+			padding-top:10px;
+			padding-bottom:10px;
+			padding-right: 30px;
+			padding-left: 30px;
+			border-radius: 5px;
+	
+	
+		}
+            body{
+                padding: 25px;
+            }
+		.menu:hover{
+			color: white;
+			text-decoration: none;
+			box-shadow: 1px 1px 5px blue;
+		}
+	
+
+		.form-save{
+			background: rgba(0,0,0,0.05);
+			padding: 20px;
+		
+		}
+		table{
+			width: 30%;
+			background: white;
+			padding: 10px;
+			border: 1px solid black;
+			box-shadow: 1px 1px 5px black;
+			
+		}
+		input[type="text"]{
+			width: 100%;
+			padding: 5px;
+			
+		}
+		button{
+			
+			padding: 5px;
+			background: green;
+			color: white;
+			border: none;
+		}
+		button:hover{
+			background: yellowgreen;
+		}
+		select{
+			width: 100%;
+			padding: 5px;
+		}
+		
+		</style>
+		
+		<script>
+			function add(){
+				var key = document.getElementById('key');
+				var val = document.getElementById('value');
+				if(!(key.value && val.value)){
+					alert("Please don't leave empty fields");
+				}else{
+					localStorage.setItem(key.value, val.value);
+				
+				}
+					location.reload();
+			
+				}
+				function SaveItem() {
+			
+					var name = document.forms.expense.name.value;
+					var data = document.forms.expense.data.value;
+					localStorage.setItem(name, data);
+					doShowAll();
+			}
+		</script>
+		
+	</head>
+	<body onload="displayChoices()">
+	
+		<div class="container">
+	
+		
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Expense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Home
+                
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="add_budget.html">New Expenses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="income.html">Add Income</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="transfer.html">Transfer</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+			<div class="content">
+				<div class="row text-center">
+					<div class="col-4">
+						<a class="menu" href="add_budget.html">Expense</a>
+					</div>
+					<div class="col-4">
+						<a class="menu" href="income.html">Income</a>
+					</div>
+					<div class="col-4">
+						<a class="menu" href="transfer.html">Transfer</a>
+					</div>
+			</div>
+		
+		</div>
+		
+		<center>
+		<br>
+		<br>
+		
+		<form name="expenses">
+		
+		<div class="col-lg-6">
+			<div class="input-group">
+				<span class="input-group-addon">amount</span>
+				<input type="text" name="amount" class="form-control" aria-label="Text input with radio button">
+			</div>
+		</div>
+
+			
+			<br>
+			<br>
+			
+		<p>
+			<label for="time">Date and time</label>
+			<input name="date" type="date" id="time">
+		</p>
+							
+	
+
+		
+		 <div class="input-group">
+      <input type="text" name = "choice" class="form-control" placeholder="Choice...." aria-label="Choice....">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" onclick="saveChoices()" type="button">Save Choice</button>
+      </span>
+    </div>
+
+		<div align="center">
+		<br>
+			<table>
+				<tr>
+					<td>
+						Pick
+					</td>
+					<td>
+						<select id="option">
+							
+
+						</select>
+					</td>
+				</tr>
+			</table>
+			
+		</div>
+		
+					<br><br>		  
+
+
+            <div>  
+            <a><button type="button" class="btn btn-primary" onclick="SaveIncome()">Saved Income</button></a>
+</div>
+    
+            </form>
+				
+		</center>		
+				
+				<br><br><br>
+           
+				
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		</div>
+            
+        <script src="jquery/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="js/localstorage.js"></script>
+	</body>
+</html>
+

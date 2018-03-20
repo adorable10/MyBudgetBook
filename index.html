@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home</title>
+		<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+		
+		<style>
+			.btn-budgetbutton{
+			color: blue;
+			background: white;
+			cursor: pointer;
+		}
+            
+            body{
+                margin-top: 25px;
+            }
+		.btn-budgetbutton:hover{
+			box-shadow: 1px 1px 10px blue;
+			border: 1px solid white;
+
+		}
+		</style>
+
+
+	</head>
+
+	<body onload="doShowAll()">
+
+		<div class="container">
+
+			  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Expense</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link active" href="index.html">Home
+                
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="add_budget.html">New Expenses</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="income.html">Add Income</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="transfer.html">Transfer</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+			<br>
+			<br>
+        </div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-4">
+						<h2>INCOME</h2>
+                        <div id="items_table">
+			<h3>List of Income</h3>
+			<table id="list2"></table>
+			<p>
+				<label><input type=button value="Clear" onclick="ClearAll()">
+					<i>* Removes all items</i></label>
+			</p>
+		</div>
+					</div>
+					<div class="col-sm-4">
+						<h2>EXPENSES</h2>
+                        <div id="items_table">
+			<h3>List of Expenses</h3>
+			<table id=list></table>
+			<p>
+				<label><input type=button value="Clear" onclick="ClearAll()">
+					<i>* Removes all items</i></label>
+			</p>
+		</div>
+					</div>
+					<div class="col-sm-4">
+						<h2>BALANCE</h2>
+					</div>
+				</div>
+                <br>
+                <br>
+                
+			</div>
+
+			<br>
+			<br>
+			<br>
+
+
+	
+
+             <script src="jquery/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="js/localstorage.js"></script>
+</body>
+</html>
+
